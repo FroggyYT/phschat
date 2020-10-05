@@ -14,6 +14,8 @@ messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
 messages.style.borderRadius = "8px";
 messages.style.borderWidth = "2px";
+messages.style.overflow = "scroll";
+messages.style.padding = "8px";
 chatScreen.append(messageBox);
 
 messageBox.onkeypress = k => {
