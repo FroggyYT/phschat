@@ -7,11 +7,13 @@ var messages = document.createElement("div");
 chatScreen.append(messages);
 
 var messageBox = document.createElement("input");
+messageBox.placeholder = "Message";
 chatScreen.append(messageBox);
 
 messageBox.onkeypress = k => {
   if (k.keyCode != 13) return;
-  s.emit("message", messageBox.value)
+  s.emit("message", messageBox.value);
+  messageBox.value = "";
 }
 
 var nameBox = document.createElement("input");
