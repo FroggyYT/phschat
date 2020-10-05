@@ -8,6 +8,12 @@ chatScreen.append(messages);
 
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
+messageBox.style.width = "500px";
+messageBox.style.height = "500px";
+messageBox.style.borderStyle = "solid";
+messageBox.style.borderColor = "black";
+messageBox.style.borderRadius = "8px";
+messageBox.style.borderWidth = "2px";
 chatScreen.append(messageBox);
 
 messageBox.onkeypress = k => {
