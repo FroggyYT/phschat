@@ -60,6 +60,8 @@ s.on("leave", d => {
   msg.textContent = `${d} left`;
   messages.append(msg);
   messages.append(document.createElement("br"));
+
+  s.emit("reqSocketList");
 });
 
 s.on("join", d => {
