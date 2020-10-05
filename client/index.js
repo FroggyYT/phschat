@@ -33,7 +33,7 @@ s.on("message", d => {
 });
 
 s.on("leave", d => {
-  var msg = document.createElement(center);
+  var msg = document.createElement("center");
   msg.textContent = `${d} left`;
   messages.append(msg);
   messages.append(document.createElement("br"));
