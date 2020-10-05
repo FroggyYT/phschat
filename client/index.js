@@ -16,6 +16,21 @@ messageBox.onkeypress = k => {
   messageBox.value = "";
 }
 
+s.on("message", d => {
+  var message = document.createElement("message");
+  
+  var name = document.createElement("strong");
+  name.textContent = `${d[0]} `;
+  
+  var text = document.createElement("p");
+  text.textContent = d[1];
+  
+  message.append(name);
+  message.append(text);
+  
+  messages.append(message);
+});
+
 var nameBox = document.createElement("input");
 nameBox.placeholder = "Username";
 loginScreen.append(nameBox);
