@@ -29,6 +29,21 @@ s.on("message", d => {
   message.append(text);
   
   messages.append(message);
+  messages.append(document.createElement("br"));
+});
+
+s.on("leave", d => {
+  var msg = document.createElement(center);
+  msg.textContent = `${d} left`;
+  messages.append(msg);
+  messages.append(document.createElement("br"));
+});
+
+s.on("join", d => {
+  var msg = document.createElement(center);
+  msg.textContent = `${d} joined`;
+  messages.append(msg);
+  messages.append(document.createElement("br"));
 });
 
 var nameBox = document.createElement("input");
