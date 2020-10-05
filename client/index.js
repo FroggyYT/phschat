@@ -18,6 +18,21 @@ messages.style.overflow = "scroll";
 messages.style.padding = "8px";
 chatScreen.append(messageBox);
 
+var playerList = document.createElement("div");
+playerList.style.width = "500px";
+playerList.style.height = "100px";
+playerList.style.borderStyle = "solid";
+playerList.style.borderColor = "black";
+playerList.style.borderRadius = "8px";
+playerList.style.borderWidth = "2px";
+playerList.style.overflow = "scroll";
+playerList.style.padding = "8px";
+chatScreen.append(playerList);
+
+s.on("resSocketList", d => {
+  playerList.textContent = d.join(", ");
+});
+
 messageBox.onkeypress = k => {
   if (k.keyCode != 13) return;
   s.emit("message", messageBox.value);
@@ -52,7 +67,24 @@ s.on("join", d => {
   msg.textContent = `${d} joined`;
   messages.append(msg);
   messages.append(document.createElement("br"));
+
+  s.emit("reqSocketList");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var nameBox = document.createElement("input");
 nameBox.placeholder = "Username";

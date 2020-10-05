@@ -47,6 +47,16 @@ io.on("connection", (s) => {
     if (canMessage) io.emit("message", [name, d]);
   });
   
+  s.on("reqSocketList", () => {
+    var updatedSockets = [];
+    for (var i in SOCKETS) {
+      if (NAMES[i] != null) {
+        updatedSockets.push(NAMES[i]);
+      }
+    }
+    s.emit("resSocketList", updatedSockets);
+  });
+
   s.on("disconnect", d => {
     for (var i in SOCKETS) {
       if (SOCKETS[i] == s.id) {
