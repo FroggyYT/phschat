@@ -48,7 +48,7 @@ s.on("leave", d => {
 });
 
 s.on("join", d => {
-  var msg = document.createElement(center);
+  var msg = document.createElement("center");
   msg.textContent = `${d} joined`;
   messages.append(msg);
   messages.append(document.createElement("br"));
