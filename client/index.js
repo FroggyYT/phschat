@@ -30,7 +30,7 @@ playerList.style.padding = "8px";
 chatScreen.append(playerList);
 
 messageBox.style.width = "500px";
-messageBox.style.height = "100px";
+messageBox.style.height = "50px";
 messageBox.style.borderStyle = "solid";
 messageBox.style.borderColor = "black";
 messageBox.style.borderRadius = "8px";
