@@ -1,7 +1,7 @@
 var s = io();
 
 var loginScreen = document.createElement("div");
-var chatScreen = document.createElement("center");
+var chatScreen = document.createElement("div");
 
 var messages = document.createElement("div");
 chatScreen.append(messages);
