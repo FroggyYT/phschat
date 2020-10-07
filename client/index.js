@@ -29,6 +29,13 @@ playerList.style.overflow = "scroll";
 playerList.style.padding = "8px";
 chatScreen.append(playerList);
 
+messageBox.style.width = "500px";
+messageBox.style.height = "100px";
+messageBox.style.borderStyle = "solid";
+messageBox.style.borderColor = "black";
+messageBox.style.borderRadius = "8px";
+messageBox.style.padding = "8px";
+
 s.on("resSocketList", d => {
   playerList.textContent = d.join(", ");
 });
