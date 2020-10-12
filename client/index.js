@@ -8,7 +8,7 @@ chatScreen.append(messages);
 
 chatScreen.style.width = `${innerWidth / 3}px`;
 chatScreen.style.position = "absolute";
-chatScreen.style.left = `${(innerWidth / 3) - (innerWidth / 3 / 2)}px`;
+chatScreen.style.left = `${(innerWidth / 2) - (innerWidth / 3 / 2)}px`;
 
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
