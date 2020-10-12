@@ -6,9 +6,13 @@ var chatScreen = document.createElement("div");
 var messages = document.createElement("div");
 chatScreen.append(messages);
 
+chatScreen.style.width = `${innerWidth / 4}px`;
+chatScreen.style.position = "absolute";
+chatScreen.style.left = `${(innerWidth / 4 / 2) + (innerWidth / 2)}px`;
+
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
-messages.style.width = "500px";
+messages.style.width = "100%";
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
@@ -20,7 +24,7 @@ messages.style.margin = "1px";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.width = "500px";
+playerList.style.width = "100%";
 playerList.style.height = "100px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
@@ -31,7 +35,7 @@ playerList.style.padding = "8px";
 playerList.style.margin = "1px";
 chatScreen.append(playerList);
 
-messageBox.style.width = "500px";
+messageBox.style.width = "100%";
 messageBox.style.height = "50px";
 messageBox.style.borderStyle = "solid";
 messageBox.style.borderColor = "black";
