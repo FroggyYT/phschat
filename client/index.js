@@ -17,7 +17,7 @@ function sizeEls() {
 
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
-messages.style.width = `${(innerWidth / 4) * 3 / 4}px`;
+messages.style.width = `${(innerWidth / 4) * 3 / 2}px`;
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
@@ -30,7 +30,7 @@ messages.style.left = "0px";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.width = `${(innerWidth / 4) * 3 / 4}px`;
+playerList.style.width = `${(innerWidth / 4) * 3 / 2}px`;
 playerList.style.height = "552px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
@@ -50,7 +50,7 @@ messageBox.style.borderRadius = "8px";
 messageBox.style.padding = "8px";
 messageBox.style.position = "absolute";
 messageBox.style.left = "0px";
-messageBox.style.top = "502px";
+messageBox.style.top = "510px";
 
 s.on("resSocketList", d => {
   playerList.textContent = d.join(", ");
