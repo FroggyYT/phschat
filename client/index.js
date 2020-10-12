@@ -5,6 +5,7 @@ var chatScreen = document.createElement("div");
 
 var messages = document.createElement("div");
 chatScreen.append(messages);
+chatScreen.style.position = "absolute";
 
 sizeEls();
 window.onresize = sizeEls;
@@ -14,14 +15,32 @@ function sizeEls() {
   var chatScreenLeft = (innerWidth / 2) - (innerWidth / 4)
   
   chatScreen.style.width = `${chatScreenWidth}px`;
-  chatScreen.style.position = "absolute";
   chatScreen.style.left = `${chatScreenLeft}px`; 
+  
+  var messagesWidth = (chatScreenWidth * 3 / 4) - 1;
+  var messagesLeft = chatScreenLeft;
+  
+  messages.style.width = `${messagesWidth}px`;
+  messages.style.left = `${messagesLeft}`;
+  
+  var playerListWidth = (chatScreenWidth / 4) - 1;
+  var playerListLeft = chatScreenLeft + messagesWidth + 1;
+  
+  playerList.style.width = `${playerListWidth}px`;
+  playerList.style.left = `${playerListLeft}px`;
+  
+  var messageBoxWidth = messagesWidth;
+  var messageBoxLeft = messagesLeft;
+  
+  messageBox.style.width = `${messageBoxWidth}px`;
+  messageBox.style.top = "510px";
+  messageBox.style.left = `${messageBoxLeft}px`;
 }
 
 var messageBox = document.createElement("input");
 var messagesWidth = (innerWidth / 4) * 3 / 4;
 messageBox.placeholder = "Message";
-messages.style.width = `${messagesWidth}px`;
+
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
@@ -30,11 +49,9 @@ messages.style.borderWidth = "2px";
 messages.style.overflow = "auto";
 messages.style.padding = "8px";
 messages.style.position = "absolute";
-messages.style.left = "0px";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.width = `${(innerWidth / 4) * 1 / 4}px`;
 playerList.style.height = "552px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
@@ -43,10 +60,9 @@ playerList.style.borderWidth = "2px";
 playerList.style.overflow = "auto";
 playerList.style.padding = "8px";
 playerList.style.position = "absolute";
-playerList.style.left = `${(innerWidth / 4)*3/4}px`;
+
 chatScreen.append(playerList);
 
-messageBox.style.width = `${(innerWidth / 4) * 1 / 4}px`;
 messageBox.style.height = "50px";
 messageBox.style.borderStyle = "solid";
 messageBox.style.borderColor = "black";
@@ -54,7 +70,6 @@ messageBox.style.borderRadius = "8px";
 messageBox.style.padding = "8px";
 messageBox.style.position = "absolute";
 messageBox.style.left = "0px";
-messageBox.style.top = "510px";
 
 s.on("resSocketList", d => {
   playerList.textContent = d.join(", ");
