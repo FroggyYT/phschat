@@ -10,14 +10,18 @@ sizeEls();
 window.onresize = sizeEls;
 
 function sizeEls() {
-  chatScreen.style.width = `${innerWidth / 2}px`;
+  var chatScreenWidth = innerWidth / 2;
+  var chatScreenLeft = (innerWidth / 2) - (innerWidth / 4)
+  
+  chatScreen.style.width = `${chatScreenWidth}px`;
   chatScreen.style.position = "absolute";
-  chatScreen.style.left = `${(innerWidth / 2) - (innerWidth / 4)}px`; 
+  chatScreen.style.left = `${chatScreenLeft}px`; 
 }
 
 var messageBox = document.createElement("input");
+var messagesWidth = (innerWidth / 4) * 3 / 4;
 messageBox.placeholder = "Message";
-messages.style.width = `${(innerWidth / 4) * 3 / 4}px`;
+messages.style.width = `${messagesWidth}px`;
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
