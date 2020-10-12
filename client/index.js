@@ -17,7 +17,7 @@ function sizeEls() {
 
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
-messages.style.width = "100%";
+messages.style.width = `${(innerWidth / 4) * 3 / 4}px`;
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
@@ -25,11 +25,11 @@ messages.style.borderRadius = "8px";
 messages.style.borderWidth = "2px";
 messages.style.overflow = "auto";
 messages.style.padding = "8px";
-messages.style.margin = "1px";
+messages.style.position = "absolute";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.width = "100%";
+playerList.style.width = `${(innerWidth / 4) * 3 / 4}px`;
 playerList.style.height = "100px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
@@ -40,7 +40,7 @@ playerList.style.padding = "8px";
 playerList.style.margin = "1px";
 chatScreen.append(playerList);
 
-messageBox.style.width = "100%";
+messageBox.style.width = `${(innerWidth / 4) * 1 / 4}px`;
 messageBox.style.height = "50px";
 messageBox.style.borderStyle = "solid";
 messageBox.style.borderColor = "black";
