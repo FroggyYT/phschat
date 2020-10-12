@@ -55,7 +55,7 @@ function sizeEls() {
   chatScreen.style.left = `${chatScreenLeft}px`; 
   
   var messagesWidth = (chatScreenWidth * 3 / 4) - 1;
-  var messagesLeft = chatScreenLeft;
+  var messagesLeft = 0;
   
   messages.style.width = `${messagesWidth}px`;
   messages.style.left = `${messagesLeft}`;
