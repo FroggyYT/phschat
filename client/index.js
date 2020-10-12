@@ -26,6 +26,7 @@ messages.style.borderWidth = "2px";
 messages.style.overflow = "auto";
 messages.style.padding = "8px";
 messages.style.position = "absolute";
+//messages.style.
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
@@ -37,7 +38,7 @@ playerList.style.borderRadius = "8px";
 playerList.style.borderWidth = "2px";
 playerList.style.overflow = "auto";
 playerList.style.padding = "8px";
-playerList.style.margin = "1px";
+playerList.style.position = "absolute";
 chatScreen.append(playerList);
 
 messageBox.style.width = `${(innerWidth / 4) * 1 / 4}px`;
@@ -46,7 +47,7 @@ messageBox.style.borderStyle = "solid";
 messageBox.style.borderColor = "black";
 messageBox.style.borderRadius = "8px";
 messageBox.style.padding = "8px";
-messageBox.style.margin = "1px";
+messageBox.style.position = "absolute";
 
 s.on("resSocketList", d => {
   playerList.textContent = d.join(", ");
