@@ -22,7 +22,7 @@ messages.style.position = "absolute";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.height = "558px";
+playerList.style.height = "582px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
 playerList.style.borderRadius = "8px";
