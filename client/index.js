@@ -22,7 +22,7 @@ messages.style.position = "absolute";
 chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
-playerList.style.height = "552px";
+playerList.style.height = "558px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
 playerList.style.borderRadius = "8px";
@@ -58,10 +58,10 @@ function sizeEls() {
   var messagesLeft = 0;
   
   messages.style.width = `${messagesWidth}px`;
-  messages.style.left = `${messagesLeft}`;
+  messages.style.left = `${messagesLeft}px`;
   
   var playerListWidth = (chatScreenWidth / 4) - 1;
-  var playerListLeft = messagesLeft + messagesWidth + 1;
+  var playerListLeft = messagesLeft + messagesWidth + 16 + 8;
   
   playerList.style.width = `${playerListWidth}px`;
   playerList.style.left = `${playerListLeft}px`;
@@ -70,7 +70,7 @@ function sizeEls() {
   var messageBoxLeft = messagesLeft;
   
   messageBox.style.width = `${messageBoxWidth}px`;
-  messageBox.style.top = "510px";
+  messageBox.style.top = "524px";
   messageBox.style.left = `${messageBoxLeft}px`;
 }
 
