@@ -31,7 +31,7 @@ chatScreen.append(messageBox);
 
 var playerList = document.createElement("div");
 playerList.style.width = `${(innerWidth / 4) * 3 / 4}px`;
-playerList.style.height = "100px";
+playerList.style.height = "552px";
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
 playerList.style.borderRadius = "8px";
@@ -50,7 +50,7 @@ messageBox.style.borderRadius = "8px";
 messageBox.style.padding = "8px";
 messageBox.style.position = "absolute";
 messageBox.style.left = "0px";
-messageBox.style.top = "602px";
+messageBox.style.top = "502px";
 
 s.on("resSocketList", d => {
   playerList.textContent = d.join(", ");
