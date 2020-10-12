@@ -61,7 +61,7 @@ function sizeEls() {
   messages.style.left = `${messagesLeft}`;
   
   var playerListWidth = (chatScreenWidth / 4) - 1;
-  var playerListLeft = chatScreenLeft + messagesWidth + 1;
+  var playerListLeft = messagesLeft + messagesWidth + 1;
   
   playerList.style.width = `${playerListWidth}px`;
   playerList.style.left = `${playerListLeft}px`;
