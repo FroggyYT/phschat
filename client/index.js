@@ -6,9 +6,9 @@ var chatScreen = document.createElement("div");
 var messages = document.createElement("div");
 chatScreen.append(messages);
 
-chatScreen.style.width = `${innerWidth / 3}px`;
+chatScreen.style.width = `${innerWidth / 2}px`;
 chatScreen.style.position = "absolute";
-chatScreen.style.left = `${(innerWidth / 2) - (innerWidth / 3 / 2)}px`;
+chatScreen.style.left = `${(innerWidth / 2) - (innerWidth / 4)}px`;
 
 var messageBox = document.createElement("input");
 messageBox.placeholder = "Message";
