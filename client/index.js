@@ -78,7 +78,7 @@ function sizeEls() {
 
 
 s.on("resSocketList", d => {
-  playerList.textContent = d.join("\n");
+  playerList.innerHTML = d.join("<br>");
 });
 
 messageBox.onkeypress = k => {
