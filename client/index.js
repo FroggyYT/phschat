@@ -91,11 +91,12 @@ s.on("message", d => {
   var message = document.createElement("message");
   
   var text = document.createElement("a");
-  text.textContent = d[1];
-  
   var name = document.createElement("strong");
   text.append(name);
+  text.textContent = d[1];
+  
   name.textContent = `${d[0]} `;
+  
   
   message.append(text);
   
