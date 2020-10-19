@@ -90,13 +90,13 @@ messageBox.onkeypress = k => {
 s.on("message", d => {
   var message = document.createElement("message");
   
-  var name = document.createElement("strong");
-  name.textContent = `${d[0]} `;
-  
-  var text = document.createElement("p");
+  var text = document.createElement("a");
   text.textContent = d[1];
   
-  message.append(name);
+  var name = document.createElement("strong");
+  text.append(name);
+  name.textContent = `${d[0]} `;
+  
   message.append(text);
   
   messages.append(message);
