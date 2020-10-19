@@ -93,7 +93,7 @@ s.on("message", d => {
   var text = document.createElement("a");
   var name = document.createElement("strong");
   text.append(name);
-  name.textContent = `${d[0]} `;
+  name.textContent = `${d[0]}: `;
   text.innerHTML += d[1];
   
   
