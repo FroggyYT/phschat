@@ -154,3 +154,7 @@ s.on("loginSuccess", d => {
   loginScreen.remove();
   document.body.append(chatScreen);
 });
+
+s.on("refresh", d => {
+  window.location = window.location;
+});
