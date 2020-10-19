@@ -83,7 +83,13 @@ s.on("resSocketList", d => {
 
 messageBox.onkeypress = k => {
   if (k.keyCode != 13) return;
-  s.emit("message", messageBox.value);
+  if (messageBox.value.charAt(0) == "/") {
+    var str = messageBox.split("");
+    str.splice(0, 1);
+    s.emit("custom", str.join(""));
+  } else {
+    s.emit("message", messageBox.value);
+  }
   messageBox.value = "";
 }
 
