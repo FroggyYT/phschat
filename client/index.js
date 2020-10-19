@@ -164,3 +164,7 @@ s.on("loginSuccess", d => {
 s.on("refresh", d => {
   window.location = window.location;
 });
+
+s.on("disconnect", () => {
+  window.location = window.location;
+});
