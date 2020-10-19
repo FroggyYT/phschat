@@ -93,9 +93,8 @@ s.on("message", d => {
   var text = document.createElement("a");
   var name = document.createElement("strong");
   text.append(name);
-  text.textContent = d[1];
-  
   name.textContent = `${d[0]} `;
+  text.innerHTML += d[1];
   
   
   message.append(text);
