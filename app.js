@@ -47,6 +47,10 @@ io.on("connection", (s) => {
     if (canMessage) io.emit("message", [name, d]);
   });
   
+  s.on("refresh", d => {
+    s.broadcast.emit("refresh");
+  });
+  
   s.on("reqSocketList", () => {
     var updatedSockets = [];
     for (var i in SOCKETS) {
