@@ -105,7 +105,7 @@ s.on("message", d => {
   
   message.append(text);
   
-  messages.append(message);
+  messages.append(message.split("<3").join("❤️"));
   messages.append(document.createElement("br"));
   
   messages.scrollTop = messages.scrollHeight;
