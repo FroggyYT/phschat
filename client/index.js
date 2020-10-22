@@ -21,10 +21,6 @@ messages.style.padding = "8px";
 messages.style.position = "absolute";
 chatScreen.append(messageBox);
 
-window.setInterval(() => {
-  messages.scrollTop = messages.scrollHeight;
-}, 100);
-
 var playerList = document.createElement("div");
 playerList.style.height = "574px";
 playerList.style.borderStyle = "solid";
@@ -111,6 +107,8 @@ s.on("message", d => {
   
   messages.append(message);
   messages.append(document.createElement("br"));
+  
+  messages.scrollTop = messages.scrollHeight;
 });
 
 s.on("leave", d => {
