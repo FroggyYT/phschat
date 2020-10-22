@@ -1,3 +1,5 @@
+document.head.querySelector("title").textContent = /phschat/.test(window.location.host) ? "PHS CHAT" : "LMS CHAT"
+
 var s = io();
 
 var loginScreen = document.createElement("div");
