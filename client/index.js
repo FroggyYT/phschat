@@ -100,12 +100,12 @@ s.on("message", d => {
   var name = document.createElement("strong");
   text.append(name);
   name.textContent = `${d[0]}: `;
-  text.innerHTML += d[1];
+  text.innerHTML += d[1].split("<3").join("❤️");
   
   
   message.append(text);
   
-  messages.append(message.split("<3").join("❤️"));
+  messages.append(message);
   messages.append(document.createElement("br"));
   
   messages.scrollTop = messages.scrollHeight;
