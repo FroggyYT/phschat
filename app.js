@@ -78,7 +78,7 @@ io.on("connection", (s) => {
       TYPING.push(name);
     }
     
-    s.broadcast.emit(TYPING);
+    s.broadcast.emit("typing", TYPING);
   });
   
   s.on("stopTyping", () => {
@@ -96,7 +96,7 @@ io.on("connection", (s) => {
       TYPING.splice(TYPING.indexOf(name), 1);
     }
     
-    s.broadcast.emit(TYPING);
+    s.broadcast.emit("typing", TYPING);
   });
   
   s.on("disconnect", d => {
