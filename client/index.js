@@ -43,8 +43,21 @@ messageBox.style.padding = "8px";
 messageBox.style.position = "absolute";
 messageBox.style.left = "0px";
 
+var timeout = setTimeout(() => {}, 1);
 
+function startTyping() {
+  s.emit("typing");
+}
 
+function stopTyping() {
+  s.emit("stopTyping");
+}
+
+messageBox.addEventListener("input", () => {
+  startTyping();
+  window.clearTimeout(timeout);
+  timeout = setTimeout(stopTyping, 3000);
+});
 
 sizeEls();
 window.onresize = sizeEls;
