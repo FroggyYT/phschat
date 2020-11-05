@@ -13,6 +13,8 @@ var io = require("socket.io")(server,{});
 var SOCKETS = [];
 var NAMES = [];
 
+var TYPING = [];
+
 io.on("connection", (s) => {
   SOCKETS.push(s.id);
   NAMES.push(null);
@@ -61,6 +63,42 @@ io.on("connection", (s) => {
     s.emit("resSocketList", updatedSockets);
   });
 
+  s.on("typing", () => {
+    var canMessage = false;
+    var name;
+    
+    for (var i in SOCKETS) {
+      if (SOCKETS[i] == s.id) {
+         if (NAMES[i] != null) canMessage = true;
+         name = NAMES[i];
+      }
+    }
+    
+    if (canMessage) {
+      TYPING.push(name);
+    }
+    
+    s.broadcast.emit(TYPING);
+  });
+  
+  s.on("stopTyping", () => {
+    var canMessage = false;
+    var name;
+    
+    for (var i in SOCKETS) {
+      if (SOCKETS[i] == s.id) {
+         if (NAMES[i] != null) canMessage = true;
+         name = NAMES[i];
+      }
+    }
+    
+    if (canMessage) {
+      TYPING.splice(TYPING.indexOf(name), 1);
+    }
+    
+    s.broadcast.emit(TYPING);
+  });
+  
   s.on("disconnect", d => {
     for (var i in SOCKETS) {
       if (SOCKETS[i] == s.id) {
