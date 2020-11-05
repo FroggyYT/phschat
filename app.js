@@ -74,7 +74,7 @@ io.on("connection", (s) => {
       }
     }
     
-    if (canMessage) {
+    if (canMessage && TYPING.indexOf(name) == -1) {
       TYPING.push(name);
     }
     
@@ -93,7 +93,7 @@ io.on("connection", (s) => {
     }
     
     if (canMessage) {
-      TYPING.filter(a => a != name);
+      TYPING = TYPING.filter(a => a != name);
     }
     
     io.emit("typing", TYPING);
