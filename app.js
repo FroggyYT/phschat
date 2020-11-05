@@ -78,7 +78,7 @@ io.on("connection", (s) => {
       TYPING.push(name);
     }
     
-    s.broadcast.emit("typing", TYPING);
+    io.emit("typing", TYPING);
   });
   
   s.on("stopTyping", () => {
@@ -93,10 +93,10 @@ io.on("connection", (s) => {
     }
     
     if (canMessage) {
-      TYPING.splice(TYPING.indexOf(name), 1);
+      TYPING.filter(a => a != name);
     }
     
-    s.broadcast.emit("typing", TYPING);
+    io.emit("typing", TYPING);
   });
   
   s.on("disconnect", d => {
