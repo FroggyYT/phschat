@@ -78,7 +78,7 @@ s.on("resSocketList", d => {
 
 messageBox.onkeypress = k => {
   if (k.keyCode != 13) return;
-  if (messageBox.value.length == 0 || messageBox.value.split(" ") > 100) return;
+  if (messageBox.value.length == 0 || messageBox.value.split(" ").length > 100) return;
   if (messageBox.value.charAt(0) == "/") {
     var str = messageBox.value.split("");
     str.splice(0, 1);
@@ -182,7 +182,7 @@ s.on("refresh", d => {
 var disconnectTimeout;
 
 s.on("disconnect", () => {
-  disconnectTimeout = setTimeout(() => { window.location = window.location; }, 5000);
+  disconnectTimeout = setTimeout(() => { window.location = window.location; }, 1000);
 });
 
 s.on("reconnect", () => {
