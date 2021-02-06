@@ -161,10 +161,26 @@ s.on("join", d => {
 
 var nameBox = document.createElement("input");
 nameBox.placeholder = "Username";
+nameBox.style.position = "absolute";
+nameBox.style.top = "5vh";
+nameBox.style.width = "40vw";
+nameBox.style.height = "5vh";
+nameBox.style.left = "30vw";
+nameBox.style.fontSize = "3.5vmin";
+nameBox.style.textAlign = "CENTER";
 loginScreen.append(nameBox);
+
+loginScreen.append(document.createElement("br"));
 
 var loginButton = document.createElement("button");
 loginButton.textContent = "Login";
+loginButton.style.width = "40vw";
+loginButton.style.position = "absolute";
+loginButton.style.left = "30vw";
+loginButton.style.height = "5vh";
+loginButton.style.top = "12vh";
+loginButton.style.fontSize = "3.5vmin";
+loginButton.style.textAlign = "CENTER";
 loginScreen.append(loginButton);
 
 document.body.append(loginScreen);
