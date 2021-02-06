@@ -5,10 +5,6 @@ var s = io();
 var loginScreen = document.createElement("div");
 var chatScreen = document.createElement("div");
 
-var messages = document.createElement("div");
-chatScreen.append(messages);
-// chatScreen.style.position = "absolute";
-
 var messageBox = document.createElement("input");
 messageBox.style.position = "absolute";
 messageBox.style.width = "69vw";
@@ -24,6 +20,8 @@ messageBox.style.padding = "8px";
 
 chatScreen.append(messageBox);
 
+var messages = document.createElement("div");
+
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
 messages.style.borderColor = "black";
@@ -38,10 +36,32 @@ messages.style.height = "84vh";
 messages.style.top = "5vh";
 messages.style.left = "5vw";
 
+
+chatScreen.append(messages);
+
+
+var typingBox = document.createElement("div");
+
+typingBox.style.position = "absolute";
+typingBox.style.width = "20vw";
+typingBox.style.height = "5vh";
+typingBox.style.left = "75vw";
+typingBox.style.top = "90vh";
+
+typingBox.style.borderStyle = "solid";
+typingBox.style.borderColor = "black";
+typingBox.style.borderRadius = "8px";
+typingBox.style.padding = "8px";
+typingBox.style.borderWidth = "2px";
+
+chatScreen.append(typingBox);
+
+
+
 var playerList = document.createElement("div");
 
 playerList.style.width = "20vw";
-playerList.style.height = "90vh";
+playerList.style.height = "84vh";
 playerList.style.left = "75vw";
 playerList.style.top = "5vh";
 
@@ -123,6 +143,10 @@ s.on("join", d => {
   messages.append(document.createElement("br"));
 
   s.emit("reqSocketList");
+});
+
+s.on("typing", d => {
+  typingBox.textContent = `${d.join(", ")} ${d.length > 0 ? "is typing..." : ""}`;
 });
 
 
