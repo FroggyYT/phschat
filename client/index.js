@@ -7,11 +7,22 @@ var chatScreen = document.createElement("div");
 
 var messages = document.createElement("div");
 chatScreen.append(messages);
-chatScreen.style.position = "absolute";
+// chatScreen.style.position = "absolute";
 
 var messageBox = document.createElement("input");
-var messagesWidth = (innerWidth / 4) * 3 / 4;
+messageBox.style.position = "absolute";
+messageBox.style.width = "69vw";
+messageBox.style.height = "5vh";
+messageBox.style.left = "5vw";
+messageBox.style.top = "90vh";
 messageBox.placeholder = "Message";
+
+messageBox.style.borderStyle = "solid";
+messageBox.style.borderColor = "black";
+messageBox.style.borderRadius = "8px";
+messageBox.style.padding = "8px";
+
+chatScreen.append(messageBox);
 
 messages.style.height = "500px";
 messages.style.borderStyle = "solid";
@@ -21,10 +32,20 @@ messages.style.borderWidth = "2px";
 messages.style.overflow = "auto";
 messages.style.padding = "8px";
 messages.style.position = "absolute";
-chatScreen.append(messageBox);
+
+messages.style.width = "69vw";
+messages.style.height = "84vh";
+messages.style.top = "5vh";
+messages.style.left = "5vw";
 
 var playerList = document.createElement("div");
-playerList.style.height = "574px";
+
+playerList.style.width = "20vw";
+playerList.style.height = "90vh";
+playerList.style.left = "75vw";
+playerList.style.top = "5vh";
+
+
 playerList.style.borderStyle = "solid";
 playerList.style.borderColor = "black";
 playerList.style.borderRadius = "8px";
@@ -34,14 +55,6 @@ playerList.style.padding = "8px";
 playerList.style.position = "absolute";
 
 chatScreen.append(playerList);
-
-messageBox.style.height = "50px";
-messageBox.style.borderStyle = "solid";
-messageBox.style.borderColor = "black";
-messageBox.style.borderRadius = "8px";
-messageBox.style.padding = "8px";
-messageBox.style.position = "absolute";
-messageBox.style.left = "0px";
 
 var timeout = setTimeout(() => {}, 1);
 
@@ -59,35 +72,35 @@ messageBox.addEventListener("input", () => {
   timeout = setTimeout(stopTyping, 3000);
 });
 
-sizeEls();
-window.onresize = sizeEls;
+// sizeEls();
+// window.onresize = sizeEls;
 
-function sizeEls() {
-  var chatScreenWidth = innerWidth / 2;
-  var chatScreenLeft = (innerWidth / 2) - (innerWidth / 4)
+// function sizeEls() {
+//   var chatScreenWidth = innerWidth / 2;
+//   var chatScreenLeft = (innerWidth / 2) - (innerWidth / 4)
   
-  chatScreen.style.width = `${chatScreenWidth}px`;
-  chatScreen.style.left = `${chatScreenLeft}px`; 
+//   chatScreen.style.width = `${chatScreenWidth}px`;
+//   chatScreen.style.left = `${chatScreenLeft}px`; 
   
-  var messagesWidth = (chatScreenWidth * 3 / 4) - 1;
-  var messagesLeft = 0;
+//   var messagesWidth = (chatScreenWidth * 3 / 4) - 1;
+//   var messagesLeft = 0;
   
-  messages.style.width = `${messagesWidth}px`;
-  messages.style.left = `${messagesLeft}px`;
+//   messages.style.width = `${messagesWidth}px`;
+//   messages.style.left = `${messagesLeft}px`;
   
-  var playerListWidth = (chatScreenWidth / 4) - 1;
-  var playerListLeft = messagesLeft + messagesWidth + 16 + 8;
+//   var playerListWidth = (chatScreenWidth / 4) - 1;
+//   var playerListLeft = messagesLeft + messagesWidth + 16 + 8;
   
-  playerList.style.width = `${playerListWidth}px`;
-  playerList.style.left = `${playerListLeft}px`;
+//   playerList.style.width = `${playerListWidth}px`;
+//   playerList.style.left = `${playerListLeft}px`;
   
-  var messageBoxWidth = messagesWidth;
-  var messageBoxLeft = messagesLeft;
+//   var messageBoxWidth = messagesWidth;
+//   var messageBoxLeft = messagesLeft;
   
-  messageBox.style.width = `${messageBoxWidth}px`;
-  messageBox.style.top = "524px";
-  messageBox.style.left = `${messageBoxLeft}px`;
-}
+//   messageBox.style.width = `${messageBoxWidth}px`;
+//   messageBox.style.top = "524px";
+//   messageBox.style.left = `${messageBoxLeft}px`;
+// }
 
 
 
