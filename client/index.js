@@ -72,39 +72,6 @@ messageBox.addEventListener("input", () => {
   timeout = setTimeout(stopTyping, 3000);
 });
 
-// sizeEls();
-// window.onresize = sizeEls;
-
-// function sizeEls() {
-//   var chatScreenWidth = innerWidth / 2;
-//   var chatScreenLeft = (innerWidth / 2) - (innerWidth / 4)
-  
-//   chatScreen.style.width = `${chatScreenWidth}px`;
-//   chatScreen.style.left = `${chatScreenLeft}px`; 
-  
-//   var messagesWidth = (chatScreenWidth * 3 / 4) - 1;
-//   var messagesLeft = 0;
-  
-//   messages.style.width = `${messagesWidth}px`;
-//   messages.style.left = `${messagesLeft}px`;
-  
-//   var playerListWidth = (chatScreenWidth / 4) - 1;
-//   var playerListLeft = messagesLeft + messagesWidth + 16 + 8;
-  
-//   playerList.style.width = `${playerListWidth}px`;
-//   playerList.style.left = `${playerListLeft}px`;
-  
-//   var messageBoxWidth = messagesWidth;
-//   var messageBoxLeft = messagesLeft;
-  
-//   messageBox.style.width = `${messageBoxWidth}px`;
-//   messageBox.style.top = "524px";
-//   messageBox.style.left = `${messageBoxLeft}px`;
-// }
-
-
-
-
 s.on("resSocketList", d => {
   playerList.innerHTML = d.join("<br>");
 });
@@ -211,6 +178,12 @@ s.on("refresh", d => {
   window.location = window.location;
 });
 
+var disconnectTimeout;
+
 s.on("disconnect", () => {
-  window.location = window.location;
+  disconnectTimeout = setTimeout(() => { window.location = window.location; }, 5000);
+});
+
+s.on("reconnect", () => {
+  clearTimeout(disconnectTimeout);
 });
