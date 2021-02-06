@@ -78,6 +78,7 @@ s.on("resSocketList", d => {
 
 messageBox.onkeypress = k => {
   if (k.keyCode != 13) return;
+  if (messageBox.value.length == 0) return;
   if (messageBox.value.charAt(0) == "/") {
     var str = messageBox.value.split("");
     str.splice(0, 1);
