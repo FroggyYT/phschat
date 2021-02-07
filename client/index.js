@@ -4,6 +4,7 @@ var s = io();
 
 var loginScreen = document.createElement("div");
 var chatScreen = document.createElement("div");
+chatScreen.id = "chatScreen";
 
 var messageBox = document.createElement("input");
 messageBox.style.position = "absolute";
@@ -13,18 +14,21 @@ messageBox.style.left = "5vw";
 messageBox.style.top = "90vh";
 messageBox.placeholder = "Message";
 
-messageBox.style.borderStyle = "solid";
-messageBox.style.borderColor = "black";
+// messageBox.style.borderStyle = "solid";
+// messageBox.style.borderColor = "black";
 messageBox.style.borderRadius = "8px";
 messageBox.style.padding = "8px";
+messageBox.style.borderStyle = "none";
+
+messageBox.className = "card";
 
 chatScreen.append(messageBox);
 
 var messages = document.createElement("div");
 
-messages.style.height = "500px";
-messages.style.borderStyle = "solid";
-messages.style.borderColor = "black";
+// messages.style.height = "500px";
+// messages.style.borderStyle = "solid";
+// messages.style.borderColor = "black";
 messages.style.borderRadius = "8px";
 messages.style.borderWidth = "2px";
 messages.style.overflow = "auto";
@@ -35,6 +39,8 @@ messages.style.width = "69vw";
 messages.style.height = "84vh";
 messages.style.top = "5vh";
 messages.style.left = "5vw";
+
+messages.className = "card";
 
 
 chatScreen.append(messages);
@@ -48,11 +54,13 @@ typingBox.style.height = "5vh";
 typingBox.style.left = "75vw";
 typingBox.style.top = "90vh";
 
-typingBox.style.borderStyle = "solid";
-typingBox.style.borderColor = "black";
+// typingBox.style.borderStyle = "solid";
+// typingBox.style.borderColor = "black";
 typingBox.style.borderRadius = "8px";
 typingBox.style.padding = "8px";
 typingBox.style.borderWidth = "2px";
+
+typingBox.className = "card";
 
 chatScreen.append(typingBox);
 
@@ -66,13 +74,15 @@ playerList.style.left = "75vw";
 playerList.style.top = "5vh";
 
 
-playerList.style.borderStyle = "solid";
-playerList.style.borderColor = "black";
+// playerList.style.borderStyle = "solid";
+// playerList.style.borderColor = "black";
 playerList.style.borderRadius = "8px";
 playerList.style.borderWidth = "2px";
 playerList.style.overflow = "auto";
 playerList.style.padding = "8px";
 playerList.style.position = "absolute";
+
+playerList.className = "card";
 
 chatScreen.append(playerList);
 
@@ -173,9 +183,12 @@ nameBox.style.height = "5vh";
 nameBox.style.left = "30vw";
 nameBox.style.fontSize = "3.5vmin";
 nameBox.style.textAlign = "CENTER";
+nameBox.className = "card";
 loginScreen.append(nameBox);
 
 loginScreen.append(document.createElement("br"));
+
+loginScreen.id = "loginScreen";
 
 var loginButton = document.createElement("button");
 loginButton.textContent = "Login";
@@ -186,11 +199,13 @@ loginButton.style.height = "5vh";
 loginButton.style.top = "12vh";
 loginButton.style.fontSize = "3.5vmin";
 loginButton.style.textAlign = "CENTER";
+loginButton.className = "card";
 loginScreen.append(loginButton);
 
 document.body.append(loginScreen);
 
 loginButton.addEventListener("click", () => {
+  if (nameBox.value.length == 0) return;
   s.emit("tryLogin", nameBox.value);
 });
 
