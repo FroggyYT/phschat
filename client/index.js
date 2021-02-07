@@ -144,6 +144,7 @@ s.on("leave", d => {
   messages.append(document.createElement("br"));
 
   s.emit("reqSocketList");
+  messages.scrollTop = messages.scrollHeight;
 });
 
 s.on("join", d => {
@@ -153,6 +154,7 @@ s.on("join", d => {
   messages.append(document.createElement("br"));
 
   s.emit("reqSocketList");
+  messages.scrollTop = messages.scrollHeight;
 });
 
 s.on("typing", d => {
