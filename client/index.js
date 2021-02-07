@@ -204,11 +204,24 @@ loginButton.style.textAlign = "CENTER";
 loginButton.className = "card";
 loginScreen.append(loginButton);
 
+var loginModal = document.createElement("div");
+var loginModalBlur = document.createElement("div");
+loginModalBlur.id = "loginModalBlur";
+loginModal.id = "loginModal";
+loginModal.className = "card";
+
+loginModal.textContent = "Logging in...";
+
+
+
 document.body.append(loginScreen);
 
 loginButton.addEventListener("click", () => {
   if (nameBox.value.length == 0) return;
   s.emit("tryLogin", nameBox.value);
+
+  loginScreen.append(loginModal);
+  loginScreen.append(loginModalBlur);
 });
 
 s.on("loginSuccess", d => {
