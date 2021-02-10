@@ -193,7 +193,7 @@ loginScreen.append(document.createElement("br"));
 loginScreen.id = "loginScreen";
 
 var loginButton = document.createElement("button");
-loginButton.textContent = "Login";
+loginButton.textContent = "Join";
 loginButton.style.width = "40vw";
 loginButton.style.position = "absolute";
 loginButton.style.left = "30vw";
